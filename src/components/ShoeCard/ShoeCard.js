@@ -36,6 +36,8 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant === 'new-release' && <NewRelease>Just released!</NewRelease>}
+          {variant === 'on-sale' && <Sale>Sale</Sale>}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -86,6 +88,28 @@ const ColorInfo = styled.p`
 const SalePrice = styled.span`
   font-weight: ${WEIGHTS.medium};
   color: ${COLORS.primary};
+`;
+
+const NewRelease = styled.span`
+  position: absolute;
+  top 16px;
+  right -5px;
+  font-weight: ${WEIGHTS.medium};
+  color:  ${COLORS.white};
+  background-color: ${COLORS.secondary};
+  padding: 5px 10px;
+  border-radius: 4px;
+`;
+
+const Sale = styled.span`
+  position: absolute;
+  top 16px;
+  right -5px;
+  font-weight: ${WEIGHTS.medium};
+  color:  ${COLORS.white};
+  background-color: ${COLORS.primary};
+  padding: 5px 10px;
+  border-radius: 4px;
 `;
 
 export default ShoeCard;
